@@ -1,0 +1,93 @@
+﻿<Page
+    x:Class="RoverSensors.MainPage"
+    xmlns:controls="using:Microsoft.UI.Xaml.Controls"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RoverSensors"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <controls:TeachingTip x:Name="SelectMissionTip"
+            Title="Select Mission"
+            Subtitle="to see specific data in real time"
+            IsLightDismissEnabled="True"                  
+            Target="{x:Bind SelectMissionItem}"
+            PreferredPlacement="Right">
+            <controls:TeachingTip.IconSource>
+                <controls:SymbolIconSource Symbol="List" />
+            </controls:TeachingTip.IconSource>
+        </controls:TeachingTip>
+        <controls:TeachingTip x:Name="InvalidUrlTip"
+            Title="Invalid URL"
+            Subtitle="Please select a valid url to retrieve sensor data"
+            IsLightDismissEnabled="True"                  
+            PreferredPlacement="Right">
+            <controls:TeachingTip.IconSource>
+                <controls:SymbolIconSource Symbol="Setting" />
+            </controls:TeachingTip.IconSource>
+        </controls:TeachingTip>
+        <controls:NavigationView x:Name="NavigationView"
+                                 HorizontalAlignment="Stretch"
+                                 VerticalAlignment="Stretch"
+                                 ItemInvoked="NavigationView_ItemInvoked"
+                                 BackRequested="NavigationView_BackRequested"
+                                 IsBackEnabled="{Binding ElementName=ContentFrame, Path=CanGoBack}"
+                                 SelectionChanged="NavigationView_SelectionChanged"
+                                 Loaded="NavigationView_Loaded"
+                                 PaneTitle="R.O.V.E.R. GR">
+            <controls:NavigationView.PaneHeader>
+                <Image Margin="20,0,0,0" Source="/Assets/rover_svg.svg" Width="35" Height="35"/>
+            </controls:NavigationView.PaneHeader>
+            <controls:NavigationView.MenuItems>
+                <controls:NavigationViewItem Content="Home" Tag="home">
+                    <controls:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE80F;"/>
+                    </controls:NavigationViewItem.Icon>
+                </controls:NavigationViewItem>
+                <controls:NavigationViewItemSeparator/>
+                <controls:NavigationViewItemHeader Content="Mission Operations"/>
+                <controls:NavigationViewItem x:Name="SelectMissionItem" Content="Select Mission" Tag="select_mission">
+                    <controls:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE71D;"/>
+                    </controls:NavigationViewItem.Icon>
+                </controls:NavigationViewItem>
+                <controls:NavigationViewItem Content="Create Mission" Tag="create_mission">
+                    <controls:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE710;"/>
+                    </controls:NavigationViewItem.Icon>
+                </controls:NavigationViewItem>
+                <controls:NavigationViewItemSeparator/>
+                <controls:NavigationViewItemHeader Content="Rover Information"/>
+                <controls:NavigationViewItem Content="Sensor's Data" Tag="sensor_data">
+                    <controls:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE9D2;"/>
+                    </controls:NavigationViewItem.Icon>
+                </controls:NavigationViewItem>
+                <controls:NavigationViewItem Content="Planet Information" Tag="planet_info">
+                    <controls:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE8A1;"/>
+                    </controls:NavigationViewItem.Icon>
+                </controls:NavigationViewItem>
+                <controls:NavigationViewItem Content="Rover's Route" Tag="rover_route">
+                    <controls:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE707;"/>
+                    </controls:NavigationViewItem.Icon>
+                </controls:NavigationViewItem>
+            </controls:NavigationView.MenuItems>
+            <Grid>
+                <CommandBar x:Name="WebCommands" IsOpen="True" DefaultLabelPosition="Right" Background="{ThemeResource WebCommandAcrylic}">
+                    <AppBarButton x:Name="web_but" Icon="Globe" Label="Website Home" Click="Web_but_Click"/>
+                    <AppBarButton x:Name="contact_but" Icon="ContactInfo" Label="Contact Us" Click="Contact_but_Click"/>
+                    <AppBarButton x:Name="question_but" Icon="Comment"  Label="Questionnaire" Click="Question_but_Click"/>
+                </CommandBar>
+
+                <Frame x:Name="ContentFrame" VerticalAlignment="Stretch" Padding="0,0,0,0" IsTabStop="True"
+                   NavigationFailed="ContentFrame_NavigationFailed" Margin="0,40,0,0"/>
+            </Grid>
+        </controls:NavigationView>
+
+    </Grid>
+</Page>

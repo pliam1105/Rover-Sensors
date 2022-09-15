@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="AlwaysShowAction">
+    <item
+        android:id="@+id/select_mission"
+        android:icon="@drawable/ic_select_mission"
+        android:title="@string/select_mission"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/planet_details"
+        android:icon="@drawable/ic_details"
+        android:title="@string/planet_details"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/more"
+        android:icon="@drawable/ic_overflow"
+        android:title="@string/more"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/voice_rec"
+                android:icon="@drawable/ic_mic"
+                android:title="@string/voice_commands_string"
+                app:showAsAction="always|withText" />
+            <item
+                android:id="@+id/new_mission"
+                android:icon="@drawable/add_mission"
+                android:title="@string/create_mission"
+                app:showAsAction="always|withText" />
+        </menu>
+    </item>
+
+
+</menu>

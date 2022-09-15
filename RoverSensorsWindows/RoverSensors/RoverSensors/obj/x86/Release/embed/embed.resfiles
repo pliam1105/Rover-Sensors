@@ -1,0 +1,14 @@
+App.xbf
+ContentDialogs\PasswordDialog.xbf
+MainPage.xbf
+Views\create_mission.xbf
+Views\HomePage.xbf
+Views\planet_info.xbf
+Views\planet_info_small.xbf
+Views\rover_route.xbf
+Views\rover_route_small.xbf
+Views\select_mission.xbf
+Views\select_mission_small.xbf
+Views\sensor_data.xbf
+Views\sensor_data_small.xbf
+Views\SettingsPage.xbf

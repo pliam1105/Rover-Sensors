@@ -1,0 +1,34 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RoverSensors.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:maps="using:Windows.UI.Xaml.Controls.Maps"
+    x:Class="RoverSensors.Views.rover_route"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:ConnectionId='2'                                     x:Name="RouteGrid">
+        <Popup x:ConnectionId='3' Grid.Row="2" Visibility="Visible" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="RoutePopup" IsOpen="True">
+            <Grid x:ConnectionId='6' x:Name="RoutePopupGrid">
+                <Border x:ConnectionId='7' x:Name="RoutePopupBorder" BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" 
+                Background="{StaticResource SystemControlBackgroundAltMediumBrush}"
+                BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <StackPanel Width="130" Height="130">
+                        <TextBlock HorizontalAlignment="Center" FontSize="20">Please Wait...</TextBlock>
+                        <ProgressRing Padding="0,50,0,0" Width="50"  Height="50"  IsActive="True"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Popup>
+        
+        <maps:MapControl x:ConnectionId='4' x:Name="routeMap" MapServiceToken="PpTTxgjx1b1ZQRasAQtf~a0xcIQ3KknmAeyBV-Nep9Q~AnPFddI45EO2d3lxZ8bIlF6E1QQ_PeuFEhCGq85w2gPs7_yAGtYahDmDGPaqFSId"/>
+
+        <Button x:ConnectionId='5'                             x:Name="route_refresh" Margin="0,20,20,0" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{ThemeResource circleButtonStyle}">
+            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE72C;"/>
+        </Button>
+        
+    </Grid>
+</Page>
+

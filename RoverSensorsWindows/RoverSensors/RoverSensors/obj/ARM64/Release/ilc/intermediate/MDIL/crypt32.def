@@ -1,0 +1,41 @@
+LIBRARY crypt32.dll
+EXPORTS
+   CertVerifyTimeValidity
+   CertGetIntendedKeyUsage
+   CertControlStore
+   CryptFindOIDInfo
+   CertAddCertificateLinkToStore
+
+
+   CertDuplicateCertificateContext
+   CertGetValidUsages
+   CertEnumCertificatesInStore
+   CertOpenStore
+   CertGetNameStringW
+   PFXImportCertStore
+   CertGetCertificateContextProperty
+   CertFindExtension
+   CertVerifyCertificateChainPolicy
+   CryptDecodeObject
+   CryptMsgGetParam
+   CertFindCertificateInStore
+
+   CryptFormatObject
+
+   CertFreeCertificateChain
+   CryptMsgClose
+
+   CertNameToStrW
+
+
+   CertFreeCertificateContext
+
+   CryptQueryObject
+   CryptImportPublicKeyInfoEx2
+
+   CertGetCertificateChain
+
+   CertCloseStore
+
+   CertDeleteCertificateFromStore
+   CertAddCertificateContextToStore

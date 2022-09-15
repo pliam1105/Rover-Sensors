@@ -1,0 +1,58 @@
+﻿<Page
+    x:Class="RoverSensors.Views.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RoverSensors.Views"
+    xmlns:about="using:GoedWare.Controls.About"
+    xmlns:items="using:GoedWare.Controls.About.Items"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <ScrollViewer>
+            <StackPanel x:ConnectionId='2' x:Name="TopPanel"                                     >
+                <TextBlock Margin="30" FontSize="35">Settings</TextBlock>
+                <NavigationViewItemSeparator/>
+                <TextBlock Margin="60,0,0,0" FontSize="25">Data Host URL</TextBlock>
+                <StackPanel Width="Auto" HorizontalAlignment="Left" Margin="100,20,0,0" Orientation="Horizontal">
+                    <Grid HorizontalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <ComboBox x:ConnectionId='4'                                               Background="LightGray" PlaceholderText="https://" Grid.Column="0" x:Name="PrefixBox">
+                            <x:String>https://</x:String>
+                            <x:String>http://</x:String>
+                        </ComboBox>
+                        <TextBox x:ConnectionId='5'                                  Grid.Column="1" x:Name="UrlBox" PlaceholderText="rovergr.space"/>
+                    </Grid>
+                    <Button x:ConnectionId='3'                          Margin="10,0,0,0" x:Name="DoneButton" Background="Blue">Done</Button>
+                </StackPanel>
+                <TextBlock Margin="30" FontSize="35">About</TextBlock>
+                <NavigationViewItemSeparator/>
+                <about:AboutControl
+                    Margin="0,40,0,0"
+                    ImageSource="/Assets/logo.png" 
+                    ImageHorizontalAlignment="Center"
+                    ImageVerticalAlignment="Center"
+                    ImageHeight="100"
+                    ImageWidth="100" 
+                    ImageStretch="Uniform"
+                    Description="The control panel of a rover discovering a new planet and helping astronauts, that shows useful data and info about the planet!"
+                    DescriptionAlignment="Center">
+                    <about:AboutControl.Items>
+                        <items:VersionItem/>
+                        <items:EmailItem Subject="Windows Store app"
+                            AddDeviceAndDebugInformation="True"
+                            Value="pliam1105@gmail.com"/>
+                        <items:WebsiteItem Value="https://pliamprojects.000webhostapp.com/rover"/>
+                        <items:PlayStoreItem Value="com.pliamdev.pliam.roversensors"/>
+                    </about:AboutControl.Items>
+                </about:AboutControl>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
+

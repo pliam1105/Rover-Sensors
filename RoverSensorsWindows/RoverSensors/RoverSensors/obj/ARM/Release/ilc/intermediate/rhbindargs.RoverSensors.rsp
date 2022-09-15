@@ -1,0 +1,22 @@
+﻿/osver:6.2
+/appcontainer
+"/runtime:mrt100_app"
+/eh:clr
+/pdb
+"/nativeLink:C:\Users\pliam\.nuget\packages\runtime.win10-arm.microsoft.net.native.compiler\2.2.8-rel-28605-00\tools\ARM\ilc\lib\Native\vmath.lib"
+/customImports
+/methodBodyFolding
+"C:\Users\pliam\OneDrive\Desktop\FLL 2019 ROVER\RoverSensorsWindows\RoverSensors\RoverSensors\obj\ARM\Release\ilc\intermediate\MDIL\RoverSensors.mdilexe"
+"/i:C:\Users\pliam\OneDrive\Desktop\FLL 2019 ROVER\RoverSensorsWindows\RoverSensors\RoverSensors\obj\ARM\Release\ilc\intermediate\MDIL"
+"/out:C:\Users\pliam\OneDrive\Desktop\FLL 2019 ROVER\RoverSensorsWindows\RoverSensors\RoverSensors\obj\ARM\Release\ilc\intermediate\Native\RoverSensors.exe"
+"/pdbAltPath:C:\Users\pliam\OneDrive\Desktop\FLL 2019 ROVER\RoverSensorsWindows\RoverSensors\RoverSensors\bin\ARM\Release\ilc"
+"/res:C:\Users\pliam\OneDrive\Desktop\FLL 2019 ROVER\RoverSensorsWindows\RoverSensors\RoverSensors\obj\ARM\Release\ilc\intermediate\Native.res"
+"/i:C:\Users\pliam\.nuget\packages\runtime.win10-arm.microsoft.net.native.sharedlibrary\2.2.7-rel-28605-00\tools\SharedLibrary\ret\MDIL"
+/shimexe
+"/classlib:SharedLibrary"
+"/sourcelink:C:\Users\pliam\OneDrive\Desktop\FLL 2019 ROVER\RoverSensorsWindows\RoverSensors\RoverSensors\obj\ARM\Release\ilc\intermediate\ILTransformed\Microsoft.Toolkit.Parsers.srclink"
+"/sourcelink:C:\Users\pliam\OneDrive\Desktop\FLL 2019 ROVER\RoverSensorsWindows\RoverSensors\RoverSensors\obj\ARM\Release\ilc\intermediate\ILTransformed\Microsoft.Toolkit.srclink"
+"/sourcelink:C:\Users\pliam\OneDrive\Desktop\FLL 2019 ROVER\RoverSensorsWindows\RoverSensors\RoverSensors\obj\ARM\Release\ilc\intermediate\ILTransformed\Microsoft.Toolkit.Uwp.srclink"
+"/sourcelink:C:\Users\pliam\OneDrive\Desktop\FLL 2019 ROVER\RoverSensorsWindows\RoverSensors\RoverSensors\obj\ARM\Release\ilc\intermediate\ILTransformed\Microsoft.Toolkit.Uwp.UI.Animations.srclink"
+"/sourcelink:C:\Users\pliam\OneDrive\Desktop\FLL 2019 ROVER\RoverSensorsWindows\RoverSensors\RoverSensors\obj\ARM\Release\ilc\intermediate\ILTransformed\Microsoft.Toolkit.Uwp.UI.Controls.srclink"
+"/sourcelink:C:\Users\pliam\OneDrive\Desktop\FLL 2019 ROVER\RoverSensorsWindows\RoverSensors\RoverSensors\obj\ARM\Release\ilc\intermediate\ILTransformed\Microsoft.Toolkit.Uwp.UI.srclink"

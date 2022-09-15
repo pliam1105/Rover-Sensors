@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".NewMissionActivity"
+    android:background="@drawable/background_gradient_blue"
+    android:id="@+id/new_mission_coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_new_mission"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:theme="@style/ToolBarStyle" />
+
+    <TextView
+        android:id="@+id/startText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/mission_start"
+        android:textAppearance="@android:style/TextAppearance.Material"
+        app:layout_constraintBottom_toTopOf="@+id/endText"
+        app:layout_constraintEnd_toStartOf="@+id/startDateTime"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_new_mission" />
+
+    <TextView
+        android:id="@+id/endText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:layout_marginStart="32dp"
+        android:text="@string/mission_end"
+        android:textAppearance="@android:style/TextAppearance.Material"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/endDateTime"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startText" />
+
+    <Button
+        android:id="@+id/startDateTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/select_start_date_time"
+        app:layout_constraintBottom_toBottomOf="@+id/startText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/startText"
+        app:layout_constraintTop_toTopOf="@+id/startText" />
+
+    <Button
+        android:id="@+id/endDateTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/select_end_date_time"
+        app:layout_constraintBottom_toBottomOf="@+id/endText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/endText"
+        app:layout_constraintTop_toTopOf="@+id/endText" />
+
+    <TextView
+        android:id="@+id/planetIdText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:layout_marginStart="32dp"
+        android:text="@string/planet_id"
+        android:textAppearance="@android:style/TextAppearance.Material"
+        app:layout_constraintBottom_toTopOf="@+id/startText"
+        app:layout_constraintEnd_toStartOf="@+id/planetIdButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/planetIdButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/select_planet"
+        app:layout_constraintBottom_toBottomOf="@+id/planetIdText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/planetIdText"
+        app:layout_constraintTop_toTopOf="@+id/planetIdText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/missionFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="32dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="visible"
+        app:backgroundTint="@color/colorPrimaryDark"
+        app:fabSize="auto"
+        app:srcCompat="@drawable/go_arrow" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
