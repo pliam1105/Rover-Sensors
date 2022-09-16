@@ -1,0 +1,639 @@
+ <html>
+     <head>
+         <title>Mission data</title>
+         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+         <script src="Scripts/jquery-1.6.min.js" type="text/javascript"></script>
+         <script src="Scripts/canvasChart.js" type="text/javascript"></script>
+         <script type="text/javascript">
+
+        $(document).ready(function () {
+            var dataDef = { title: "Temperature",
+                            xLabel: 'Date Time', 
+                            yLabel: 'Temperature (°C)',
+                            labelFont: '19pt Arial', 
+                            dataPointFont: '15pt Arial',
+                            renderTypes: [CanvasChart.renderType.lines, CanvasChart.renderType.points],
+                            dataPoints: [<?php
+$mission_id=$_GET["mission_id"];
+$servername = "localhost";
+$username = "u351871370_buty";
+$password = "NezuGevaXy";
+$dbname = "u351871370_buty";
+$temperature=array();
+$humidity=array();
+$light=array();
+$datetime=array();
+$id=array();
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT AVG(temperature),date_time,mission_id FROM sensor_data WHERE mission_id=$mission_id GROUP BY DATE( date_time ), HOUR( date_time )";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+       if($row["mission_id"]==$mission_id){
+        array_push($temperature,$row["AVG(temperature)"]);
+        array_push($datetime,date_modify(date_create($row['date_time']),"+3 hours")->format('d/m H:i'));
+       }
+    }
+}
+                            for($i=0;$i<count($temperature);$i++){
+                                if($i+1<count($temperature)){
+                                    echo "{ x: '$datetime[$i]', y: $temperature[$i] },";
+                                }else{
+                                    echo "{ x: '$datetime[$i]', y: $temperature[$i] }";
+                                }
+                            }
+                            ?>]
+                           };
+            CanvasChart.render('canvas', dataDef);
+        });
+
+         </script>
+         <script type="text/javascript">
+
+        $(document).ready(function () {
+            var dataDef = { title: "Humidity",
+                            xLabel: 'Date Time', 
+                            yLabel: 'Humidity (%)',
+                            labelFont: '19pt Arial', 
+                            dataPointFont: '15pt Arial',
+                            renderTypes: [CanvasChart.renderType.lines, CanvasChart.renderType.points],
+                            dataPoints: [<?php
+$mission_id=$_GET["mission_id"];
+$servername = "localhost";
+$username = "u351871370_buty";
+$password = "NezuGevaXy";
+$dbname = "u351871370_buty";
+$temperature=array();
+$humidity=array();
+$light=array();
+$datetime=array();
+$id=array();
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT AVG(humidity),date_time,mission_id FROM sensor_data WHERE mission_id=$mission_id GROUP BY DATE( date_time ), HOUR( date_time )";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+       if($row["mission_id"]==$mission_id){
+        array_push($humidity,$row["AVG(humidity)"]);
+        array_push($datetime,date_modify(date_create($row['date_time']),"+3 hours")->format('d/m H:i'));
+       }
+    }
+}
+                            for($i=0;$i<count($humidity);$i++){
+                                if($i+1<count($humidity)){
+                                    echo "{ x: '$datetime[$i]', y: $humidity[$i] },";
+                                }else{
+                                    echo "{ x: '$datetime[$i]', y: $humidity[$i] }";
+                                }
+                            }
+                            ?>]
+                           };
+            CanvasChart.render('canvas2', dataDef);
+        });
+
+         </script>
+         <script type="text/javascript">
+
+        $(document).ready(function () {
+            var dataDef = { title: "Light",
+                            xLabel: 'Date Time', 
+                            yLabel: 'Light (%)',
+                            labelFont: '19pt Arial', 
+                            dataPointFont: '15pt Arial',
+                            renderTypes: [CanvasChart.renderType.lines, CanvasChart.renderType.points],
+                            dataPoints: [<?php
+$mission_id=$_GET["mission_id"];
+$servername = "localhost";
+$username = "u351871370_buty";
+$password = "NezuGevaXy";
+$dbname = "u351871370_buty";
+$temperature=array();
+$humidity=array();
+$light=array();
+$datetime=array();
+$id=array();
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT AVG(light),date_time,mission_id FROM sensor_data WHERE mission_id=$mission_id GROUP BY DATE( date_time ), HOUR( date_time )";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+       if($row["mission_id"]==$mission_id){
+        array_push($light,$row["AVG(light)"]);
+        array_push($datetime,date_modify(date_create($row['date_time']),"+3 hours")->format('d/m H:i'));
+       }
+    }
+}
+                            for($i=0;$i<count($light);$i++){
+                                if($i+1<count($light)){
+                                    echo "{ x: '$datetime[$i]', y: $light[$i] },";
+                                }else{
+                                    echo "{ x: '$datetime[$i]', y: $light[$i] }";
+                                }
+                            }
+                            ?>]
+                           };
+            CanvasChart.render('canvas3', dataDef);
+        });
+
+         </script>
+         <script type="text/javascript">
+
+        $(document).ready(function () {
+            var dataDef = { title: "Gas",
+                            xLabel: 'Date Time', 
+                            yLabel: 'Gas (%)',
+                            labelFont: '19pt Arial', 
+                            dataPointFont: '15pt Arial',
+                            renderTypes: [CanvasChart.renderType.lines, CanvasChart.renderType.points],
+                            dataPoints: [<?php
+$mission_id=$_GET["mission_id"];
+$servername = "localhost";
+$username = "u351871370_buty";
+$password = "NezuGevaXy";
+$dbname = "u351871370_buty";
+$temperature=array();
+$humidity=array();
+$light=array();
+$gas=array();
+$datetime=array();
+$id=array();
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT AVG(gas),date_time,mission_id FROM sensor_data WHERE mission_id=$mission_id GROUP BY DATE( date_time ), HOUR( date_time )";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+       if($row["mission_id"]==$mission_id){
+        array_push($gas,$row["AVG(gas)"]);
+        array_push($datetime,date_modify(date_create($row['date_time']),"+3 hours")->format('d/m H:i'));
+       }
+    }
+}
+                            for($i=0;$i<count($gas);$i++){
+                                if($i+1<count($gas)){
+                                    echo "{ x: '$datetime[$i]', y: $gas[$i] },";
+                                }else{
+                                    echo "{ x: '$datetime[$i]', y: $gas[$i] }";
+                                }
+                            }
+                            ?>]
+                           };
+            CanvasChart.render('canvas4', dataDef);
+        });
+
+         </script>
+         <script type="text/javascript">
+
+        $(document).ready(function () {
+            var dataDef = { title: "CO2",
+                            xLabel: 'Date Time', 
+                            yLabel: 'CO2 (ppm)',
+                            labelFont: '19pt Arial', 
+                            dataPointFont: '15pt Arial',
+                            renderTypes: [CanvasChart.renderType.lines, CanvasChart.renderType.points],
+                            dataPoints: [<?php
+$mission_id=$_GET["mission_id"];
+$servername = "localhost";
+$username = "u351871370_buty";
+$password = "NezuGevaXy";
+$dbname = "u351871370_buty";
+$temperature=array();
+$humidity=array();
+$light=array();
+$gas=array();
+$datetime=array();
+$id=array();
+$co2=array();
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT AVG(CO2),date_time,mission_id FROM sensor_data WHERE mission_id=$mission_id GROUP BY DATE( date_time ), HOUR( date_time )";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+       if($row["mission_id"]==$mission_id){
+        array_push($co2,$row["AVG(CO2)"]);
+        array_push($datetime,date_modify(date_create($row['date_time']),"+3 hours")->format('d/m H:i'));
+       }
+    }
+}
+                            for($i=0;$i<count($co2);$i++){
+                                if($i+1<count($co2)){
+                                    echo "{ x: '$datetime[$i]', y: $co2[$i] },";
+                                }else{
+                                    echo "{ x: '$datetime[$i]', y: $co2[$i] }";
+                                }
+                            }
+                            ?>]
+                           };
+            CanvasChart.render('canvas5', dataDef);
+        });
+
+         </script>
+         <script type="text/javascript">
+
+        $(document).ready(function () {
+            var dataDef = { title: "TVOC",
+                            xLabel: 'Date Time', 
+                            yLabel: 'TVOC (ppb)',
+                            labelFont: '19pt Arial', 
+                            dataPointFont: '15pt Arial',
+                            renderTypes: [CanvasChart.renderType.lines, CanvasChart.renderType.points],
+                            dataPoints: [<?php
+$mission_id=$_GET["mission_id"];
+$servername = "localhost";
+$username = "u351871370_buty";
+$password = "NezuGevaXy";
+$dbname = "u351871370_buty";
+$temperature=array();
+$humidity=array();
+$light=array();
+$gas=array();
+$datetime=array();
+$id=array();
+$tvoc=array();
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT AVG(TVOC),date_time,mission_id FROM sensor_data WHERE mission_id=$mission_id GROUP BY DATE( date_time ), HOUR( date_time )";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+       if($row["mission_id"]==$mission_id){
+        array_push($tvoc,$row["AVG(TVOC)"]);
+        array_push($datetime,date_modify(date_create($row['date_time']),"+3 hours")->format('d/m H:i'));
+       }
+    }
+}
+                            for($i=0;$i<count($co2);$i++){
+                                if($i+1<count($co2)){
+                                    echo "{ x: '$datetime[$i]', y: $tvoc[$i] },";
+                                }else{
+                                    echo "{ x: '$datetime[$i]', y: $tvoc[$i] }";
+                                }
+                            }
+                            ?>]
+                           };
+            CanvasChart.render('canvas6', dataDef);
+        });
+
+         </script>
+         <script type="text/javascript">
+
+        $(document).ready(function () {
+            var dataDef = { title: "Barometric Pressure",
+                            xLabel: 'Date Time', 
+                            yLabel: 'Barometric Pressure (Pa)',
+                            labelFont: '19pt Arial', 
+                            dataPointFont: '15pt Arial',
+                            renderTypes: [CanvasChart.renderType.lines, CanvasChart.renderType.points],
+                            dataPoints: [<?php
+$mission_id=$_GET["mission_id"];
+$servername = "localhost";
+$username = "u351871370_buty";
+$password = "NezuGevaXy";
+$dbname = "u351871370_buty";
+$temperature=array();
+$humidity=array();
+$light=array();
+$gas=array();
+$datetime=array();
+$id=array();
+$bmp=array();
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT AVG(barometric_pressure),date_time,mission_id FROM sensor_data WHERE mission_id=$mission_id GROUP BY DATE( date_time ), HOUR( date_time )";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+       if($row["mission_id"]==$mission_id){
+        array_push($bmp,$row["AVG(barometric_pressure)"]);
+        array_push($datetime,date_modify(date_create($row['date_time']),"+3 hours")->format('d/m H:i'));
+       }
+    }
+}
+                            for($i=0;$i<count($bmp);$i++){
+                                if($mission_id>=8){
+                                if($i+1<count($bmp)){
+                                    echo "{ x: '$datetime[$i]', y: $bmp[$i] },";
+                                }else{
+                                    echo "{ x: '$datetime[$i]', y: $bmp[$i] }";
+                                }
+                                }else{
+                                   if($i+1<count($bmp)){
+                                    echo "{ x: '$datetime[$i]', y: 51000 },";
+                                }else{
+                                    echo "{ x: '$datetime[$i]', y: 51000 }";
+                                } 
+                                }
+                            }
+                            ?>]
+                           };
+            CanvasChart.render('canvas7', dataDef);
+        });
+
+         </script>
+         <script type="text/javascript">
+
+        $(document).ready(function () {
+            var dataDef = { title: "UV",
+                            xLabel: 'Date Time', 
+                            yLabel: 'UV (UV Index)',
+                            labelFont: '19pt Arial', 
+                            dataPointFont: '15pt Arial',
+                            renderTypes: [CanvasChart.renderType.lines, CanvasChart.renderType.points],
+                            dataPoints: [<?php
+$mission_id=$_GET["mission_id"];
+$servername = "localhost";
+$username = "u351871370_buty";
+$password = "NezuGevaXy";
+$dbname = "u351871370_buty";
+$temperature=array();
+$humidity=array();
+$light=array();
+$gas=array();
+$datetime=array();
+$id=array();
+$uv=array();
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT AVG(UV),date_time,mission_id FROM sensor_data WHERE mission_id=$mission_id GROUP BY DATE( date_time ), HOUR( date_time )";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+       if($row["mission_id"]==$mission_id){
+        array_push($uv,$row["AVG(UV)"]);
+        array_push($datetime,date_modify(date_create($row['date_time']),"+3 hours")->format('d/m H:i'));
+       }
+    }
+}
+                            for($i=0;$i<count($bmp);$i++){
+                                if($i+1<count($bmp)){
+                                    echo "{ x: '$datetime[$i]', y: $uv[$i] },";
+                                }else{
+                                    echo "{ x: '$datetime[$i]', y: $uv[$i] }";
+                                }
+                            }
+                            ?>]
+                           };
+            CanvasChart.render('canvas8', dataDef);
+        });
+
+         </script>
+         <style>
+            body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+            body {font-size:16px;}
+            .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+            .w3-half img:hover{opacity:1}
+         </style>
+     </head>
+     <body style="background-color:#005000;margin:0 auto;text-align:center;zoom: 50%;" width="2000">
+         <font size=6>
+         <?php
+$mission_id=$_GET["mission_id"];
+$servername = "localhost";
+$username = "u351871370_buty";
+$password = "NezuGevaXy";
+$dbname = "u351871370_buty";
+$temperature=array();
+$humidity=array();
+$light=array();
+$datetime=array();
+$gas=array();
+$co2=array();
+$tvoc=array();
+$bmp=array();
+$uv=array();
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM sensor_data WHERE mission_id=$mission_id";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+       if($row["mission_id"]==$mission_id){
+           if($row['temperature']==0||is_nan($row['temperature'])){
+            array_push($temperature,1);
+        }else{
+            array_push($temperature,$row['temperature']);
+        }
+        if($row['humidity']==0||is_nan($row['humidity'])){
+            array_push($humidity,1);
+        }else{
+            array_push($humidity,$row['humidity']);
+        }
+        if($row['light']==0||is_nan($row['light'])){
+            array_push($light,1);
+        }else{
+            array_push($light,$row['light']);
+        }
+        array_push($datetime,$row['date_time']);
+        if($row['gas']==0||is_nan($row['gas'])){
+            array_push($gas,1);
+        }else{
+            array_push($gas,$row['gas']);
+        }
+        if($row['CO2']==0||is_nan($row['CO2'])){
+            array_push($co2,1);
+        }else{
+            array_push($co2,$row['CO2']);
+        }
+        if($row['TVOC']==0||is_nan($row['TVOC'])){
+            array_push($tvoc,1);
+        }else{
+            array_push($tvoc,$row['TVOC']);
+        }
+        if($row['UV']==0||is_nan($row['UV'])){
+            array_push($uv,1);
+        }else{
+            array_push($uv,$row['UV']);
+        }
+        if($mission_id>=8){
+        if($row['barometric_pressure']==0||is_nan($row['barometric_pressure'])){
+            array_push($bmp,1);
+        }else{
+            array_push($bmp,$row['barometric_pressure']);
+        }
+        }else{
+            array_push($bmp,51000);
+        }
+       }
+    }
+}
+$sql = "SELECT * FROM habitable_limits";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+      if($row['Type']=="Temperature"){
+          $temperature_min=$row['Min'];
+          $temperature_max=$row['Max'];
+      }else if($row['Type']=="Humidity"){
+          $humidity_min=$row['Min'];
+          $humidity_max=$row['Max'];
+      }else if($row['Type']=="Light"){
+          $light_min=$row['Min'];
+          $light_max=$row['Max'];
+      }else if($row['Type']=="Gas"){
+          $gas_min=$row['Min'];
+          $gas_max=$row['Max'];
+      }else if($row['Type']=="CO2"){
+          $co2_min=$row['Min'];
+          $co2_max=$row['Max'];
+      }else if($row['Type']=="TVOC"){
+          $tvoc_min=$row['Min'];
+          $tvoc_max=$row['Max'];
+      }else if($row['Type']=="UV"){
+          $uv_min=$row['Min'];
+          $uv_max=$row['Max'];
+      }else if($row['Type']=="Barometric_pressure"){
+          $bmp_min=$row['Min'];
+          $bmp_max=$row['Max'];
+      }
+    }
+}
+$sql = "SELECT * FROM mission_table WHERE mission_id=$mission_id";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        $planet_id=$row['planet_id'];
+    }
+}
+$sql = "SELECT * FROM planet_table WHERE planet_id=$planet_id";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        $planet_name=$row['Name'];
+        $planet_type=$row['Type'];
+        $planet_mass=$row['Mass (ME)'];
+        $planet_radius=$row['Radius (RE)'];
+        $planet_flux=$row['Flux (SE)'];
+        $planet_teq=$row['Teq (K)'];
+        $planet_period=$row['Period (days)'];
+        $planet_distance=$row['Distance(ly)'];
+        $planet_esi=$row['ESI'];
+    }
+}
+$temperatureA=array_filter($temperature);
+$temperatureAV=array_sum($temperatureA)/count($temperatureA);
+$temperatureAV=round($temperatureAV,2);
+echo "Average Temperature: $temperatureAV"."<br/>";
+$humidityA=array_filter($humidity);
+$humidityAV=array_sum($humidityA)/count($humidityA);
+$humidityAV=round($humidityAV,2);
+echo "Average Humidity: $humidityAV"."<br/>";
+$lightA=array_filter($light);
+$lightAV=array_sum($lightA)/count($lightA);
+$lightAV=round($lightAV,2);
+echo "Average Light: $lightAV"."<br/>";
+$gasA=array_filter($gas);
+$gasAV=array_sum($gasA)/count($gasA);
+$gasAV=round($gasAV,2);
+echo "Average Gas: $gasAV"."<br/>";
+$co2A=array_filter($co2);
+$co2AV=array_sum($co2A)/count($co2A);
+$co2AV=round($co2AV,2);
+echo "Average CO2: $co2AV"."<br/>";
+$tvocA=array_filter($tvoc);
+$tvocAV=array_sum($tvocA)/count($tvocA);
+$tvocAV=round($tvocAV,2);
+echo "Average TVOC: $tvocAV"."<br/>";
+$uvA=array_filter($uv);
+$uvAV=array_sum($uvA)/count($uvA);
+$uvAV=round($uvAV,2);
+echo "Average UV: $uvAV"."<br/>";
+$bmpA=array_filter($bmp);
+$bmpAV=array_sum($bmpA)/count($bmpA);
+$bmpAV=round($bmpAV,2);
+echo "Average Barometric Pressure: $bmpAV"."<br/>";
+echo "<p style='outline:5px dashed white'><br/>Planet name: $planet_name, type: $planet_type, mass(ME): $planet_mass, radius(RE): $planet_radius, flux(SE): $planet_flux, Teq(K): $planet_teq, period(days): $planet_period, distance(ly): $planet_distance, ESI: $planet_esi<br/><br/></p>";
+if($temperature_min<=$temperatureAV&&$temperature_max>=$temperatureAV&&$humidity_min<=$humidityAV&&$humidity_max>=$humidityAV&&$light_min<=$lightAV&&$light_max>=$lightAV&&$gas_min<=$gasAV&&$gas_max>=$gasAV&&$co2_min<=$co2AV&&$co2_max>=$co2AV&&$tvoc_min<=$tvocAV&&$tvoc_max>=$tvocAV&&$uv_min<=$uvAV&&$uv_max>=$uvAV&&$bmp_min<=$bmpAV&&$bmp_max>=$bmpAV){
+    echo "<br/>"."Planet habitable!"."<br/>";
+}else{
+    echo "<br/>"."Planet inhabitable!"."<br/>";
+}
+$conn->close();
+?></font> <br/>
+<body style="margin-left:50px;margin-top:50px;">
+    <canvas id="canvas" width="2650" height="1500"></canvas>
+    <canvas id="canvas2" width="2650" height="1500"></canvas>
+    <canvas id="canvas3" width="2650" height="1500"></canvas>
+    <canvas id="canvas4" width="2650" height="1500"></canvas>
+    <canvas id="canvas5" width="2650" height="1500"></canvas>
+    <canvas id="canvas6" width="2650" height="1500"></canvas>
+    <canvas id="canvas7" width="2650" height="1500"></canvas>
+    <canvas id="canvas8" width="2650" height="1500"></canvas>
+</body>
+     </body>
+ </html>
+ 
