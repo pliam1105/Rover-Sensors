@@ -1,0 +1,39 @@
+*Pick And Place List
+*Company=
+*Author=
+*eMail=
+*
+*Project=Sensor_circuit_pcb
+*Date=20:07:45
+*CreatedBy=Fritzing 0.9.3b.04.19.5c895d327c44a3114e5fcc9d8260daf0cbb52806
+*
+*
+*Coordinates in mm, always center of component
+*Origin 0/0=Lower left corner of PCB
+*Rotation in degree (0-360, math. pos.)
+*
+*No;Value;Package;X;Y;Rotation;Side;Name
+1;;;37.4608;-45.2834;0;Bottom;TXT2
+2;;THT;24.3318;-38.1528;-90;Bottom;GPS-Header
+3;;;12.9018;-9.5778;0;Bottom;VEML6070
+4;;;51.0449;-26.7228;0;Bottom;Mega-core
+5;;;41.5459;-14.105;90;Bottom;IMG1
+6;;;3.79758;-44.6857;0;Bottom;TXT1
+7;;THT;8.32979;-46.6898;0;Bottom;Battery
+8;220;THT;38.3018;-27.9928;180;Bottom;LDR-Resistor
+9;;;11.6162;-25.3275;90;Bottom;IMG1
+10;;THT;12.9018;-35.6128;0;Bottom;DHT
+11;;;66.2418;-37.5178;0;Bottom;BMP280
+12;;;64.9718;-16.5628;0;Bottom;CCS811
+13;;THT;11.6318;-22.9128;90;Bottom;Gas
+14;;;40.8417;-15.2929;0;Bottom;Via3
+15;;THT;81.4818;-15.2928;0;Bottom;Uno-GND
+16;;;31.7841;-14.0421;90;Bottom;ESP8266
+17;;THT;81.4818;-17.8328;0;Bottom;Uno-Tx
+18;;;10.5672;-35.9274;180;Bottom;IMG1
+19;;THT;81.4818;-20.3728;0;Bottom;Uno-Rx
+20;;;24.1666;-35.1477;-90;Bottom;IMG2
+21;;;17.3735;-29.5403;0;Bottom;Via1
+22;;;26.5175;-44.7802;0;Bottom;Via2
+23;;;3.75045;-48.1142;0;Bottom;TXT1
+24;;THT;35.7618;-36.8828;0;Bottom;LDR

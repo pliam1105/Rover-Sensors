@@ -1,0 +1,16 @@
+Needed for pcb testing and assembly
+
+Arduino Mega 2560: https://www.8com.gr/arduino-mega-2560-r3-atmega16u2
+
+Stackable Headers(για τα πίσω pins που δεν χρησιμοποιούνται και για όποιο άλλο δεν χρησιμοποιείται):
+https://grobotronics.com/arduino-stackable-header-kit-r3-full-pack.html
+
+Simple male to smaller-male Header:
+https://www.hellasdigital.gr/electronics/prototyping/cables-pins/40pin-2.54mm-single-row-male-pin-header/
+
+Simple female headers:
+https://www.hellasdigital.gr/electronics/prototyping/cables-pins/40pin-2.54mm-single-row-female-pin-header/
+
+Screw Terminal(για την είσοδο της μπαταρίας για τους αισθητήρες):
+https://www.hellasdigital.gr/electronics/components/kf301-2p-5.08mm-2-pin-terminal-screw/
+
