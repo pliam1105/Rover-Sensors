@@ -35,7 +35,7 @@ float latitude;
 float longitude;
 float altitude;
 int geiger_cpm_val;
-String server = "rovergr.space";
+String server = "pliamprojects.000webhostapp.com";
 String uri;
 
 void setup() {
@@ -121,7 +121,7 @@ void loop() {
       }
     }
     uv_val = uv.readUV();
-    uri = "/arduino/write_sql_arduino.php?temperature=" + String(tempC) + "&humidity=" + String(humidity) + "&light=" + String(light_val) + "&gas=" + String(gas_val) + "&co2=" + String(co2_val) + "&tvoc=" + String(tvoc_val) + "&uv=" + String(uv_val) + "&barometric_pressure=" + String(bmp_val) + "&latitude=" + String(latitude, 6) + "&longitude=" + String(longitude, 6) + "&altitude=" + String(altitude, 6) + "&radiation=" + String(geiger_cpm_val);
+    uri = "/rover/arduino/write_sql_arduino.php?temperature=" + String(tempC) + "&humidity=" + String(humidity) + "&light=" + String(light_val) + "&gas=" + String(gas_val) + "&co2=" + String(co2_val) + "&tvoc=" + String(tvoc_val) + "&uv=" + String(uv_val) + "&barometric_pressure=" + String(bmp_val) + "&latitude=" + String(latitude, 6) + "&longitude=" + String(longitude, 6) + "&altitude=" + String(altitude, 6) + "&radiation=" + String(geiger_cpm_val);
     Serial3.println("AT+CIPSTART=\"TCP\",\"" + server + "\",80");//start a TCP connection.
     if ( Serial3.find("OK")) {
       Serial.println("TCP connection ready");
