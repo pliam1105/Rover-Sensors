@@ -18,12 +18,12 @@ $longitude=$_GET['longitude'];
 $altitude=$_GET ['altitude'];
 $radiation=$_GET ['radiation'];
 
-$conn = mysqli_connect("localhost","u351871370_buty","NezuGevaXy");
+$conn = mysqli_connect($servername,$username,$password);
 if (!$conn)
 {
     die('Could not connect: ' . mysqli_connect_error());
 }
-$con_result = mysqli_select_db($conn,"u351871370_buty");
+$con_result = mysqli_select_db($conn,$dbname);
 if(!$con_result)
 {
 	die('Could not connect to specific database: ' . mysqli_error($conn));	
@@ -46,7 +46,8 @@ if(!$con_result)
             $htemperature = $temperature;
 	        $hhumidity = $humidity;
 
-	        $sql = "INSERT INTO sensor_data(mission_id,date_time, temperature, humidity, light, gas, CO2, TVOC, UV, barometric_pressure, latitude, longitude, altitude, radiation) VALUES ($mission_id,now(),$temperature,$humidity,$light,$gas,$co2,$tvoc,$uv,$barometric_pressure,$latitude,$longitude, $altitude, $radiation)";
+	        $sql = "INSERT INTO sensor_data(mission_id,date_time, temperature, humidity, light, gas, CO2, TVOC, UV, barometric_pressure, latitude, longitude, altitude, radiation) 
+						VALUES ($mission_id,now(),$temperature,$humidity,$light,$gas,$co2,$tvoc,$uv,$barometric_pressure,$latitude,$longitude, $altitude, $radiation)";
 	        $result = mysqli_query($conn,$sql);
 	    if (!$result) {
 		    die('Invalid query: ' . mysqli_error($conn));
@@ -57,7 +58,8 @@ if(!$con_result)
             $htemperature = $temperature;
 	        $hhumidity = $humidity;
 
-	        $sql = "INSERT INTO sensor_data(date_time, temperature, humidity, light, gas, CO2, TVOC, UV, barometric_pressure, latitude, longitude, altitude, radiation) VALUES (now(),$temperature,$humidity,$light,$gas,$co2,$tvoc,$uv,$barometric_pressure,$latitude,$longitude, $altitude, $radiation)";
+	        $sql = "INSERT INTO sensor_data(date_time, temperature, humidity, light, gas, CO2, TVOC, UV, barometric_pressure, latitude, longitude, altitude, radiation) 
+				VALUES (now(),$temperature,$humidity,$light,$gas,$co2,$tvoc,$uv,$barometric_pressure,$latitude,$longitude, $altitude, $radiation)";
 	        $result = mysqli_query($conn,$sql);
 	        if (!$result) {
 	    	die('Invalid query: ' . mysqli_error($conn));
