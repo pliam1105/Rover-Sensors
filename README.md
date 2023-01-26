@@ -109,6 +109,6 @@ There is also the home page, where there is a dashboard containing all the above
 <div style="text-align: center;"><img src="Images/home.png" width="70%"></div>
 
 <br>
-<div style="margin-left: 20px"><a href="ms-windows-store://pdp/?ProductId=9PBLZ7BN15H7&mode=mini">
-   <img height="100" src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Download Discord" />
+<div style="margin-left: 20px"><a href="ms-windows-store://pdp/?ProductId=9PBLZ7BN15H7">
+   <img height="100" src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Download Rover Sensors" />
 </a></div>
