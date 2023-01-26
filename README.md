@@ -109,5 +109,6 @@ There is also the home page, where there is a dashboard containing all the above
 <div style="text-align: center;"><img src="Images/home.png" width="70%"></div>
 
 <br>
-<script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"></script>
-<div style="margin-left: 25px"><ms-store-badge productid="9PBLZ7BN15H7" animation="on"></ms-store-badge></div>
+<div style="margin-left: 20px"><a href="ms-windows-store://pdp/?ProductId=XPDC2RH70K22MN&mode=mini">
+   <img height="100" src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Download Discord" />
+</a></div>
