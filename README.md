@@ -1,5 +1,5 @@
-<p align="center"><h1>Rover Sensors</h1></p>
-<p align="center"><img src="Images/logo.png" width="20%"></p>
+# Rover Sensors
+<img src="Images/logo.png" width="20%">
 
 ## Overview
 A prototype of a rover that can be used to collect data, in order to determine the habitability of a planet.
@@ -77,7 +77,6 @@ There is also the home page, where there is a dashboard containing all the above
 |:---:|:---:|
 | <img src="Images/select.png"> | <img src="Images/data.png">  |
 | <img src="Images/info.png">   | <img src="Images/route.png"> |
-<br>
 <p align="center"><img src="Images/home.png" width="70%"></p>
 
 <br>
