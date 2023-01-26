@@ -1,9 +1,9 @@
-<div style="text-align: center;"><h1>Rover Sensors</h1></div>
-<div style="text-align: center;"><img src="Images/logo.png" width="20%"></div>
+<p align="center"><h1>Rover Sensors</h1></p>
+<p align="center"><img src="Images/logo.png" width="20%"></p>
 
 ## Overview
 A prototype of a rover that can be used to collect data, in order to determine the habitability of a planet.
-<div style="text-align: center;"><img src="Images/FOT_0098.jpg" width="70%"></div>
+<p align="center"><img src="Images/FOT_0098.jpg" width="70%"></p>
 
 ## Sensors
 This rover contains the following sensors:
@@ -19,7 +19,7 @@ This rover contains the following sensors:
 As well as an ESP-8266 Wi-Fi module for data transmission.<br>
 These sensors and the Wi-Fi module are connected to an Arduino Mega (an Arduino Uno is also used between the Geiger Counter and the Arduino Mega). The Arduino in turn transmits the data, via some PHP files, to a database.
 
-<div style="text-align:center;"><img src="Images/box9.jpg" width="70%"></div>
+<p align="center"><img src="Images/box9.jpg" width="70%"></p>
 
 ## Database
 The data of the sensors are stored on a MySQL database, currently on a shared hosting service.
@@ -43,7 +43,7 @@ Then, on the home page, there is the following information:
 For the website, I used VS Code and it was written in HTML, CSS, and JavaScript.<br>
 ([Source code](roversensorsweb/data.php))
 
-<div style="text-align: center;"><img src="Images/website_all.png" width="80%"></div>
+<p align="center"><img src="Images/website_all.png" width="80%"></p>
 
 ## Android Application ([Google Play](https://play.google.com/store/apps/details?id=com.pliamdev.pliam.roversensors))
 
@@ -78,7 +78,7 @@ There is also the home page, where there is a dashboard containing all the above
 | <img src="Images/select.png"> | <img src="Images/data.png">  |
 | <img src="Images/info.png">   | <img src="Images/route.png"> |
 <br>
-<p align="center"><img src="Images/home.png" width="70%"></div>
+<p align="center"><img src="Images/home.png" width="70%"></p>
 
 <br>
 <div style="margin-left: 20px"><a href="https://apps.microsoft.com/store/detail/rover-sensors/9PBLZ7BN15H7">
