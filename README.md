@@ -41,7 +41,7 @@ Then, on the home page, there is the following information:
 * The route of the rover in a map
 
 For the website, I used VS Code and it was written in HTML, CSS, and JavaScript.<br>
-([Source code](roversensorsweb/data.php))
+([Source code](RoverSensorsWeb/data.php))
 
 <p align="center"><img src="Images/website_all.png" width="80%"></p>
 
