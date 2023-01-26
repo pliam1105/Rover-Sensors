@@ -55,30 +55,9 @@ I also made an Android application (using Android Studio) to access the sensors'
 * There is also a page where the user can view the rover’s location and route during the mission, retrieved from the database
 
 ([Source Code](RoverSensorsAndroid))
-<style>
-    .row {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 4px;
-    }
-
-    /* Create two equal columns that sits next to each other */
-    .column {
-    flex: 23%;
-    padding: 0 4px;
-    }
-
-    .column img {
-    margin-top: 8px;
-    vertical-align: middle;
-    }
-</style>
-<div class="row">
-    <div class="column"><img src="Images/androidselect.png"></div>
-    <div class="column"><img src="Images/androidgraph.png"></div>
-    <div class="column"><img src="Images/androidplanet.png"></div>
-    <div class="column"><img src="Images/androidmap.png"></div>
-</div>
+| | | | |
+|:---:|:---:|:---:|:---:|
+| <img src="Images/androidselect.png"> | <img src="Images/androidgraph.png"> | <img src="Images/androidplanet.png"> | <img src="Images/androidmap.png"> |
 
 <a href="https://play.google.com/store/apps/details?id=com.pliamdev.pliam.roversensors&amp;pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
 <img height="120" alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png">
@@ -94,19 +73,12 @@ I created a UWP (Universal Windows Platform) Windows application, to view the da
 There is also the home page, where there is a dashboard containing all the above pages together.
 
 ([Source Code](RoverSensorsWindows))
-
-<div class="row">
-    <div class="column">
-        <img src="Images/select.png">
-        <img src="Images/info.png">
-    </div>
-    <div class="column">
-        <img src="Images/data.png">
-        <img src="Images/route.png">
-    </div>
-</div>
+| | |
+|:---:|:---:|
+| <img src="Images/select.png"> | <img src="Images/data.png">  |
+| <img src="Images/info.png">   | <img src="Images/route.png"> |
 <br>
-<div style="text-align: center;"><img src="Images/home.png" width="70%"></div>
+<p align="center"><img src="Images/home.png" width="70%"></div>
 
 <br>
 <div style="margin-left: 20px"><a href="https://apps.microsoft.com/store/detail/rover-sensors/9PBLZ7BN15H7">
