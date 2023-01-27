@@ -21,6 +21,13 @@ These sensors and the Wi-Fi module are connected to an Arduino Mega (an Arduino 
 
 <p align="center"><img src="Images/box9.jpg" width="70%"></p>
 
+The sensors are connected to the Arduino using a custom-designed PCB, made using Fritzing:
+
+<div style="overflow: hidden; width: 100%;">
+    <img style="float: left;" src="Images/fritzing.png" width="49%">
+   <img style="float: right;" src="Images/Sensor Shield Img.png" width="49%">
+</div>
+
 ## Database
 The data of the sensors are stored on a MySQL database, currently on a shared hosting service.
 
