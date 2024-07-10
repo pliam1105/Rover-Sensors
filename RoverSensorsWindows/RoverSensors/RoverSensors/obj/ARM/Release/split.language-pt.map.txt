@@ -1,6 +1,0 @@
-﻿[ResourceMetadata]
-"ResourceId"			"split.language-pt"
-"ResourceDimensions"		"language-pt-br"
-
-[Files]
-"C:\Users\pliam\OneDrive\Desktop\FLL 2019 ROVER\RoverSensorsWindows\RoverSensors\RoverSensors\obj\ARM\Release\split.language-pt.pri"			"resources.pri"

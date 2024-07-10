@@ -1,6 +1,0 @@
-LIBRARY iphlpapi.dll
-EXPORTS
-   GetPerAdapterInfo
-   GetNetworkParams
-
-   GetAdaptersAddresses
