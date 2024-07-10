@@ -5,18 +5,18 @@ android {
         config {
             keyAlias 'key'
             keyPassword 'Pli@m1105'
-            storeFile file('C:\\Users\\pliam\\OneDrive\\Desktop\\FLL 2019 ROVER\\Rover Sensors Google Play\\keystore.jks')
+            storeFile file('C:\\Users\\pliam\\OneDrive\\Desktop\\MISCELLANEOUS\\FLL 2019 ROVER\\Rover Sensors Google Play\\keystore.jks')
             storePassword 'Pli@m1105'
         }
     }
     useLibrary 'org.apache.http.legacy'
-    compileSdk 32
+    compileSdk 34
     defaultConfig {
         applicationId "com.pliamdev.pliam.roversensors"
-        minSdk 23
-        targetSdk 31
-        versionCode 5
-        versionName '1.4'
+        minSdk 27
+        targetSdk 34
+        versionCode 7
+        versionName '1.6'
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         signingConfig signingConfigs.config
     }
